@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-abstract class ColorsApp {
+abstract class ColorsTextApp {
   //Seguir exemplo do branco
   Color get branco;
   Color get azul;
@@ -9,7 +9,7 @@ abstract class ColorsApp {
   Color get cinzaEscuro;
 }
 
-class ColorsAppDefault implements ColorsApp {
+class ColorsTextAppDefault implements ColorsTextApp {
   @override
   Color get branco => const Color(0xFFFFFFFF);
   @override
