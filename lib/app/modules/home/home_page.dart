@@ -8,11 +8,10 @@ class HomePage extends StatefulWidget {
   const HomePage({Key? key, this.title = 'Home'}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-
   late final HomeStore store;
 
   @override
@@ -25,7 +24,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Counter'),
+        title: const Text('Counter'),
       ),
       body: Observer(
         builder: (context) => Text('${store.counter}'),
@@ -34,7 +33,7 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           store.increment();
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
