@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_piaui_website/design_system/colors/custom_colors.dart';
 import 'package:flutter_piaui_website/design_system/theme/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -8,6 +9,9 @@ abstract class TextApp {
   TextStyle get menuFlutter;
   TextStyle get menuPiaui;
   TextStyle get menuSubtitle;
+  TextStyle get dataCard;
+  TextStyle get titleCard;
+  TextStyle get learnMore;
 }
 
 class TextAppDefault implements TextApp {
@@ -29,8 +33,29 @@ class TextAppDefault implements TextApp {
 
   @override
   TextStyle get menuSubtitle => GoogleFonts.poppins(
-      color: ThemeApp.colors.black,
-      fontSize: 25,
-      fontWeight: FontWeight.w600,
+        color: ThemeApp.colors.black,
+        fontSize: 25,
+        fontWeight: FontWeight.w600,
       );
+
+  @override
+  TextStyle get dataCard => GoogleFonts.poppins(
+      color: CustomColors.instance.black25,
+      fontSize: 25,
+      fontWeight: FontWeight.w500,
+      letterSpacing: 0.5);
+
+  @override
+  TextStyle get learnMore => GoogleFonts.poppins(
+      color: CustomColors.instance.blue,
+      fontSize: 25,
+      fontWeight: FontWeight.w700,
+      letterSpacing: 0.5);
+
+  @override
+  TextStyle get titleCard => GoogleFonts.poppins(
+      color: CustomColors.instance.black,
+      fontSize: 35,
+      fontWeight: FontWeight.w900,
+      letterSpacing: 0.7);
 }
