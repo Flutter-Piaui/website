@@ -86,7 +86,7 @@ class TextAppDefault implements TextApp {
         fontWeight: FontWeight.w300,
         letterSpacing: -0.022,
       );
-      
+
   @override
   TextStyle get basic => GoogleFonts.poppins(
         color: ThemeApp.colors.branco,
@@ -101,11 +101,7 @@ class TextAppDefault implements TextApp {
   TextStyle get menuPiaui => GoogleFonts.poppins(color: ThemeApp.colors.black, fontSize: 40, fontWeight: FontWeight.bold);
 
   @override
-  TextStyle get menuSubtitle => GoogleFonts.poppins(
-        color: ThemeApp.colors.black,
-        fontSize: 25,
-        fontWeight: FontWeight.w600,
-      );
+  TextStyle get menuSubtitle => GoogleFonts.poppins(color: ThemeApp.colors.black, fontSize: 25, fontWeight: FontWeight.w600);
 
   @override
   TextStyle get dataCard => GoogleFonts.poppins(color: CustomColors.instance.black25, fontSize: 25, fontWeight: FontWeight.w500, letterSpacing: 0.5);
