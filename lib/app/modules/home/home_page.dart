@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_piaui_website/design_system/theme/website_images.dart';
+import '../../../design_system/components/carousel.dart';
+import '../../../design_system/components/custom_card.dart';
 import 'home_store.dart';
 
 class HomePage extends StatefulWidget {
@@ -26,9 +29,18 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Counter'),
       ),
-      body: Observer(
-        builder: (context) => Text('${store.counter}'),
-      ),
+      // body: Observer(
+      //   builder: (context) => Text('${store.counter}'),
+      // ),
+      body: Center(
+          child: Column(children: [
+        CustomCard(
+          cardType: CardType.photo,
+          image: Image.asset(
+            WebsiteImages.facebookLogo,
+          ),
+        )
+      ])),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           store.increment();
