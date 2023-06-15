@@ -23,6 +23,8 @@ dev_dependencies:
   # modular_test: ^2.0.0
 assets:
   - assets/images/
+  - assets/images/zyro-image_1.pngvector_181.png
+  - assets/images/vector_181.png
 flutter:
   uses-material-design: true
 

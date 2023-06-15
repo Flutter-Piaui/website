@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import '../../../design_system/components/about/about.dart';
 import 'home_store.dart';
 
 class HomePage extends StatefulWidget {
@@ -28,7 +29,7 @@ class _HomePageState extends State<HomePage> {
         title: Text('Counter'),
       ),
       body: Observer(
-        builder: (context) => Text('${store.counter}'),
+        builder: (context) => About(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
