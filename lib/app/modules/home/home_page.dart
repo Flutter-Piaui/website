@@ -26,24 +26,29 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Counter'),
-      ),
       // body: Observer(
       //   builder: (context) => Text('${store.counter}'),
       // ),
       body: Center(
           child: Column(children: [
-        CustomCard(
-          cardType: CardType.photo,
-          image: Image.asset(
-            WebsiteImages.facebookLogo,
+        SizedBox(
+          width: 200,
+          height: 200,
+          child: PageView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: WebsiteImages().imageList.length,
+            itemBuilder: (ctx, index) {
+              return CustomCard(
+                cardType: CardType.photo,
+                image: WebsiteImages().imageList[index],
+              );
+            },
           ),
-        )
+        ),
       ])),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          store.increment();
+          Modular.to.navigate('/events/');
         },
         child: const Icon(Icons.add),
       ),

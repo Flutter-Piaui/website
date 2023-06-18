@@ -33,4 +33,4 @@ class CustomColors {
 
 extension CustomColorsExtension on BuildContext {
   CustomColors get color => CustomColors.instance;
-} 
+}

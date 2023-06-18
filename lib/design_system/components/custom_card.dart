@@ -7,7 +7,7 @@ enum CardType { event, photo }
 
 class CustomCard extends StatelessWidget {
   CardType cardType;
-  Widget image;
+  String image;
   String? data;
   String? titleCard;
   void Function()? onPressed;
@@ -41,15 +41,17 @@ class CustomCard extends StatelessWidget {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(40),
                         color: context.color.black25),
-                    child: image,
+                    child: Image.asset(
+                      image,
+                    ),
                   ),
                   const SizedBox(height: 41),
                   Text(data ?? 'Colocar a data do evento',
-                      style: TextAppDefault().dataCard),
+                      style: TextAppDefault().dataSCard),
                   const SizedBox(height: 23),
                   Text(
                     titleCard ?? 'Escrever título do evento',
-                    style: TextAppDefault().titleCard,
+                    style: TextAppDefault().textRegular,
                   ),
                   const SizedBox(height: 7),
                   TextButton(
@@ -75,7 +77,9 @@ class CustomCard extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(34.4),
                     color: context.color.black25),
-                child: image,
+                child: Image.asset(
+                  image,
+                ),
               )
             ]),
           ),

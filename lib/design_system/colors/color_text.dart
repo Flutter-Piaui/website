@@ -18,7 +18,7 @@ class ColorsTextAppDefault implements ColorsTextApp {
   @override
   Color get blue => const Color(0xFF0582ca);
   @override
-  Color get black => const Color(0xFF1A1A1A); 
+  Color get black => const Color(0xFF1A1A1A);
   @override
   Color get gray => const Color(0xFFEAEAEA);
   @override
