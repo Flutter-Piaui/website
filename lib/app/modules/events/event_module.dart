@@ -14,7 +14,7 @@ class EventModule extends Module {
         Bind.factory((i) => JsonEventDatasource()),
         Bind.factory((i) => ApiEventRepository(i())),
         Bind.factory((i) => FetchEvents(i())),
-        Bind.singleton((i) => EventStore(i())),
+        Bind.lazySingleton((i) => EventStore(i())),
       ];
 
   @override
