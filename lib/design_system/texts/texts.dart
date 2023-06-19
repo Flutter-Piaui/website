@@ -55,7 +55,7 @@ class TextAppDefault implements TextApp {
   @override
   TextStyle get learnMore => GoogleFonts.poppins(
       color: CustomColors.instance.blue,
-      fontSize: 25,
+      fontSize: 18,
       fontWeight: FontWeight.w700,
       letterSpacing: 0.5);
 
@@ -81,6 +81,24 @@ class TextAppDefault implements TextApp {
         color: CustomColors.instance.black,
         fontSize: 15,
         fontWeight: FontWeight.w400,
+        letterSpacing: -0.03,
+        height: 1.2,
+      );
+
+  @override
+  TextStyle get textMMedium => GoogleFonts.poppins(
+        color: CustomColors.instance.black,
+        fontSize: 20,
+        fontWeight: FontWeight.w600,
+        letterSpacing: -0.03,
+        height: 1.2,
+      );
+
+  @override
+  TextStyle get textTMedium => GoogleFonts.poppins(
+        color: CustomColors.instance.black,
+        fontSize: 20,
+        fontWeight: FontWeight.w700,
         letterSpacing: -0.03,
         height: 1.2,
       );
