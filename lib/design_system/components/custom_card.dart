@@ -7,7 +7,7 @@ enum CardType { event, photo }
 
 class CustomCard extends StatelessWidget {
   CardType cardType;
-  String image;
+  Widget image;
   String? data;
   String? titleCard;
   void Function()? onPressed;
@@ -41,9 +41,7 @@ class CustomCard extends StatelessWidget {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(40),
                         color: context.color.black25),
-                    child: Image.network(
-                      image,
-                    ),
+                    child: image,
                   ),
                   Text(data ?? 'Colocar a data do evento',
                       style: TextAppDefault().dataSCard),
@@ -76,9 +74,7 @@ class CustomCard extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(34.4),
                     color: context.color.black25),
-                child: Image.asset(
-                  image,
-                ),
+                child: image,
               )
             ]),
           ),

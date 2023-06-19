@@ -39,9 +39,10 @@ class _HomePageState extends State<HomePage> {
             itemCount: WebsiteImages().imageList.length,
             itemBuilder: (ctx, index) {
               return CustomCard(
-                cardType: CardType.photo,
-                image: WebsiteImages().imageList[index],
-              );
+                  cardType: CardType.photo,
+                  image: Image.asset(
+                    WebsiteImages().imageList[index],
+                  ));
             },
           ),
         ),

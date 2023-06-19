@@ -11,14 +11,14 @@ abstract class EventStoreBase with Store {
   @observable
   List<EventEntity> listEvent = [];
 
-  EventStoreBase(this._fetchEventsUsecase);
+  EventStoreBase(this._fetchEventsUsecase) {
+    fetchEvents();
+  }
 
   @observable
   int counter = 0;
   @action
   fetchEvents() async {
-    print(listEvent.length);
     listEvent = await _fetchEventsUsecase.call();
-    print(listEvent.length);
   }
 }

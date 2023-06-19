@@ -27,11 +27,6 @@ class _EventPageState extends State<EventPage> {
   @override
   void initState() {
     super.initState();
-    test();
-  }
-
-  test() async {
-    await store.fetchEvents();
   }
 
   @override
@@ -65,7 +60,9 @@ class _EventPageState extends State<EventPage> {
                                         EdgeInsets.only(left: 20, bottom: 20),
                                     child: CustomCard(
                                       cardType: CardType.event,
-                                      image: i.photoUrl,
+                                      image: Image.network(
+                                        i.photoUrl,
+                                      ),
                                       titleCard: i.title,
                                       data: i.date,
                                       onPressed: () async {
