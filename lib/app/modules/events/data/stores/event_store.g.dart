@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'home_store.dart';
+part of 'event_store.dart';
 
 // **************************************************************************
 // StoreGenerator
@@ -8,9 +8,25 @@ part of 'home_store.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
-mixin _$HomeStore on HomeStoreBase, Store {
+mixin _$EventStore on EventStoreBase, Store {
+  late final _$listEventAtom =
+      Atom(name: 'EventStoreBase.listEvent', context: context);
+
+  @override
+  List<EventEntity> get listEvent {
+    _$listEventAtom.reportRead();
+    return super.listEvent;
+  }
+
+  @override
+  set listEvent(List<EventEntity> value) {
+    _$listEventAtom.reportWrite(value, super.listEvent, () {
+      super.listEvent = value;
+    });
+  }
+
   late final _$counterAtom =
-      Atom(name: 'HomeStoreBase.counter', context: context);
+      Atom(name: 'EventStoreBase.counter', context: context);
 
   @override
   int get counter {
@@ -25,9 +41,18 @@ mixin _$HomeStore on HomeStoreBase, Store {
     });
   }
 
+  late final _$fetchEventsAsyncAction =
+      AsyncAction('EventStoreBase.fetchEvents', context: context);
+
+  @override
+  Future fetchEvents() {
+    return _$fetchEventsAsyncAction.run(() => super.fetchEvents());
+  }
+
   @override
   String toString() {
     return '''
+listEvent: ${listEvent},
 counter: ${counter}
     ''';
   }

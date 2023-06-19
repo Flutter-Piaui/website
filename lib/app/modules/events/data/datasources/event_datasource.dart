@@ -11,7 +11,7 @@ abstract class EventDatasource {
 }
 
 ///Event's implementation of [EventDatasource]
-class JsonEventDatasource {
+class JsonEventDatasource implements EventDatasource {
   ///Base constructor of [EventDatasource]
   @override
   Future<List<EventEntity>> fetchEvents() async {

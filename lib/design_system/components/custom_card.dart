@@ -27,7 +27,7 @@ class CustomCard extends StatelessWidget {
         return Center(
           child: Container(
             width: 470,
-            height: 536,
+            height: 556,
             padding: const EdgeInsets.fromLTRB(33, 37, 33, 14),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(40), color: Colors.white),
@@ -41,14 +41,13 @@ class CustomCard extends StatelessWidget {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(40),
                         color: context.color.black25),
-                    child: Image.asset(
+                    child: Image.network(
                       image,
                     ),
                   ),
-                  const SizedBox(height: 41),
                   Text(data ?? 'Colocar a data do evento',
                       style: TextAppDefault().dataSCard),
-                  const SizedBox(height: 23),
+                  const SizedBox(height: 15),
                   Text(
                     titleCard ?? 'Escrever título do evento',
                     style: TextAppDefault().textRegular,
