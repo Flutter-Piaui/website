@@ -53,12 +53,12 @@ class _CarouselState extends State<Carousel> {
             },
           ),
         ),
-        bullets(urlIndex)
+        bullet(urlIndex)
       ],
     );
   }
 
-  bullets(String urlImage) {
+  bullet(String urlImage) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
