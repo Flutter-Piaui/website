@@ -6,12 +6,12 @@ import 'package:flutter_piaui_website/design_system/texts/texts.dart';
 enum CardType { event, photo }
 
 class CustomCard extends StatelessWidget {
-  CardType cardType;
-  Widget image;
-  String? data;
-  String? titleCard;
-  void Function()? onPressed;
-  CustomCard({
+  final CardType cardType;
+  final Widget image;
+  final String? data;
+  final String? titleCard;
+  final void Function()? onPressed;
+  const CustomCard({
     Key? key,
     required this.cardType,
     required this.image,

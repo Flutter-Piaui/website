@@ -9,7 +9,7 @@ class AppWidget extends StatelessWidget {
     return MaterialApp.router(
       title: 'Flutter Piauí',
       theme: ThemeData(primarySwatch: Colors.blue),
-      routerDelegate: Modular.c,
+      routerDelegate: Modular.routerDelegate,
       routeInformationParser: Modular.routeInformationParser,
     );
   }
