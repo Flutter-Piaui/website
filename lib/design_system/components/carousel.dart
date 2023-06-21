@@ -58,7 +58,7 @@ class _CarouselState extends State<Carousel> {
     );
   }
 
-  bullet(String urlImage) {
+  Widget bullet(String urlImage) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
