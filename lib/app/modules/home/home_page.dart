@@ -4,6 +4,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_piaui_website/design_system/theme/website_images.dart';
 import '../../../design_system/components/carousel.dart';
 import '../../../design_system/components/custom_card.dart';
+import '../../../design_system/components/about/about.dart';
 import 'home_store.dart';
 
 class HomePage extends StatefulWidget {
@@ -26,10 +27,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // body: Observer(
-      //   builder: (context) => Text('${store.counter}'),
-      // ),
-      body: Center(
+       body: Center(
           child: Column(children: [
         SizedBox(
           width: 200,
