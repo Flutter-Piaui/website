@@ -6,12 +6,12 @@ import 'package:flutter_piaui_website/design_system/texts/texts.dart';
 enum CardType { event, photo }
 
 class CustomCard extends StatelessWidget {
-  final CardType cardType;
-  final Widget image;
-  final String? data;
-  final String? titleCard;
-  final void Function()? onPressed;
-  const CustomCard({
+  CardType cardType;
+  String image;
+  String? data;
+  String? titleCard;
+  void Function()? onPressed;
+  CustomCard({
     Key? key,
     required this.cardType,
     required this.image,
@@ -41,15 +41,17 @@ class CustomCard extends StatelessWidget {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(40),
                         color: context.color.black25),
-                    child: image,
+                    child: Image.asset(
+                      image,
+                    ),
                   ),
                   const SizedBox(height: 41),
                   Text(data ?? 'Colocar a data do evento',
-                      style: TextAppDefault().dataCard),
+                      style: TextAppDefault().dataSCard),
                   const SizedBox(height: 23),
                   Text(
                     titleCard ?? 'Escrever título do evento',
-                    style: TextAppDefault().titleCard,
+                    style: TextAppDefault().textRegular,
                   ),
                   const SizedBox(height: 7),
                   TextButton(
@@ -75,7 +77,9 @@ class CustomCard extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(34.4),
                     color: context.color.black25),
-                child: image,
+                child: Image.asset(
+                  image,
+                ),
               )
             ]),
           ),

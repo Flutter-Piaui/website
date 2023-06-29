@@ -95,20 +95,61 @@ class TextAppDefault implements TextApp {
       );
 
   @override
-  TextStyle get menuFlutter => GoogleFonts.poppins(fontSize: 40, fontWeight: FontWeight.bold, color: ThemeApp.colors.blue);
+  TextStyle get menuFlutter => GoogleFonts.poppins(
+      fontSize: 40, fontWeight: FontWeight.bold, color: ThemeApp.colors.blue);
 
   @override
-  TextStyle get menuPiaui => GoogleFonts.poppins(color: ThemeApp.colors.black, fontSize: 40, fontWeight: FontWeight.bold);
+  TextStyle get menuPiaui => GoogleFonts.poppins(
+      color: ThemeApp.colors.black, fontSize: 40, fontWeight: FontWeight.bold);
 
   @override
-  TextStyle get menuSubtitle => GoogleFonts.poppins(color: ThemeApp.colors.black, fontSize: 25, fontWeight: FontWeight.w600);
+  TextStyle get menuSubtitle => GoogleFonts.poppins(
+      color: ThemeApp.colors.black, fontSize: 25, fontWeight: FontWeight.w600);
 
   @override
-  TextStyle get dataCard => GoogleFonts.poppins(color: CustomColors.instance.black25, fontSize: 25, fontWeight: FontWeight.w500, letterSpacing: 0.5);
+  TextStyle get dataCard => GoogleFonts.poppins(
+      color: CustomColors.instance.black25,
+      fontSize: 25,
+      fontWeight: FontWeight.w500,
+      letterSpacing: 0.5);
 
   @override
-  TextStyle get learnMore => GoogleFonts.poppins(color: CustomColors.instance.blue, fontSize: 25, fontWeight: FontWeight.w700, letterSpacing: 0.5);
+  TextStyle get dataSCard => GoogleFonts.poppins(
+      color: CustomColors.instance.black25,
+      fontSize: 20,
+      fontWeight: FontWeight.w500,
+      letterSpacing: 0.5);
 
   @override
-  TextStyle get titleCard => GoogleFonts.poppins(color: CustomColors.instance.black, fontSize: 35, fontWeight: FontWeight.w900, letterSpacing: 0.7);
+  TextStyle get learnMore => GoogleFonts.poppins(
+      color: CustomColors.instance.blue,
+      fontSize: 25,
+      fontWeight: FontWeight.w700,
+      letterSpacing: 0.5);
+
+  @override
+  TextStyle get titleCard => GoogleFonts.poppins(
+        color: CustomColors.instance.black,
+        fontSize: 35,
+        fontWeight: FontWeight.w900,
+        letterSpacing: 0.7,
+      );
+
+  @override
+  TextStyle get textRegular => GoogleFonts.poppins(
+        color: CustomColors.instance.black,
+        fontSize: 25,
+        fontWeight: FontWeight.w400,
+        letterSpacing: -0.03,
+        height: 1.2,
+      );
+
+  @override
+  TextStyle get textSRegular => GoogleFonts.poppins(
+        color: CustomColors.instance.black,
+        fontSize: 15,
+        fontWeight: FontWeight.w400,
+        letterSpacing: -0.03,
+        height: 1.2,
+      );
 }
