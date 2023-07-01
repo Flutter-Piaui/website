@@ -15,8 +15,6 @@ abstract class EventStoreBase with Store {
     fetchEvents();
   }
 
-  @observable
-  int counter = 0;
   @action
   fetchEvents() async {
     listEvent = await _fetchEventsUsecase.call();
