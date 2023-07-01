@@ -5,11 +5,11 @@ import 'modules/events/event_module.dart';
 
 class AppModule extends Module {
   @override
-  final List<Bind> binds = [];
+  List<Bind> get binds => [];
 
   @override
-  final List<ModularRoute> routes = [
-    ModuleRoute('/', module: HomeModule()),
-    ModuleRoute('/events', module: EventModule()),
-  ];
+  List<ModularRoute> get routes => [
+        ModuleRoute('/', module: HomeModule()),
+        ModuleRoute('/events', module: EventModule()),
+      ];
 }

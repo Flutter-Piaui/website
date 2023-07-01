@@ -4,7 +4,7 @@ import '../../domain/entities/photo_entity.dart';
 
 import 'package:mobx/mobx.dart';
 // Include generated file
-part 'photos_store.g.dart';
+part 'photo_store.g.dart';
 
 class PhotosStore = PhotosStoreBase with _$PhotosStore;
 
