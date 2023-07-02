@@ -17,7 +17,9 @@ class PhotosModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute(
           '/',
-          child: (context, args) => const PhotosPage(),
+          child: (context, args) => PhotosPage(
+            store: context.read(),
+          ),
         ),
       ];
 }
