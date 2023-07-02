@@ -1,4 +1,4 @@
-import '../../../domain/entities/event_entity.dart';
+import '../../domain/entities/event_entity.dart';
 import '../../domain/usecases/fetch_events_usecases.dart';
 
 import 'package:mobx/mobx.dart';
