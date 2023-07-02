@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -7,24 +6,23 @@ import '../../../../../design_system/components/carousel.dart';
 import '../../../../../design_system/components/custom_card.dart';
 import '../../../../../design_system/texts/texts.dart';
 
-
 import '../../../../../design_system/texts/texts.dart';
 import '../../data/stores/photo_store.dart';
 
 class PhotosPage extends StatefulWidget {
-  const PhotosPage({Key? key}) : super(key: key);
+  final PhotosStore store;
+  const PhotosPage({Key? key, required this.store}) : super(key: key);
 
   @override
   State<PhotosPage> createState() => _PhotosPageState();
 }
 
 class _PhotosPageState extends State<PhotosPage> {
-  late final PhotosStore store;
+  PhotosStore get store => widget.store;
 
   @override
   void initState() {
     super.initState();
-    store = Modular.get<PhotosStore>();
   }
 
   @override
@@ -47,12 +45,14 @@ class _PhotosPageState extends State<PhotosPage> {
                       NeverScrollableScrollPhysics(), // to disable GridView's scrolling
                   shrinkWrap: true, // You won't see infinite size error
                   children: <Widget>[
-                    for (var i in WebsiteImages().imageList)
+                    for (var i in store.listphotos)
                       Container(
                         margin: EdgeInsets.only(left: 20),
                         child: CustomCard(
                           cardType: CardType.event,
-                          image: i,
+                          image: Image.network(
+                            i.photoUrl,
+                          ),
                         ),
                       ),
                   ],
