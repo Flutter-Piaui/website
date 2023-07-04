@@ -24,9 +24,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // body: Observer(
-      //   builder: (context) => Text('${store.counter}'),
-      // ),
       body: Center(
           child: Column(children: [
         SizedBox(
@@ -37,9 +34,10 @@ class _HomePageState extends State<HomePage> {
             itemCount: WebsiteImages().imageList.length,
             itemBuilder: (ctx, index) {
               return CustomCard(
-                cardType: CardType.photo,
-                image: WebsiteImages().imageList[index],
-              );
+                  cardType: CardType.photo,
+                  image: Image.asset(
+                    WebsiteImages().imageList[index],
+                  ));
             },
           ),
         ),

@@ -1,5 +1,6 @@
-import '../../domain/usecases/fetch_events_usecases.dart';
 import '../../domain/entities/event_entity.dart';
+import '../../domain/usecases/fetch_events_usecases.dart';
+
 import 'package:mobx/mobx.dart';
 // Include generated file
 part 'event_store.g.dart';
@@ -15,8 +16,6 @@ abstract class EventStoreBase with Store {
     fetchEvents();
   }
 
-  @observable
-  int counter = 0;
   @action
   fetchEvents() async {
     listEvent = await _fetchEventsUsecase.call();
