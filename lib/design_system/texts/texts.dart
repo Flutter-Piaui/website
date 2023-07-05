@@ -20,12 +20,18 @@ abstract class TextApp {
   TextStyle get dataCard;
   TextStyle get titleCard;
   TextStyle get learnMore;
+
+  TextStyle get menuContact;
+  TextStyle get subMenuContact;
+  TextStyle get subMenuContactLink;
+  TextStyle get titleCardContact;
+  TextStyle get subtitleCardContact;
 }
 
 class TextAppDefault implements TextApp {
   @override
   TextStyle get poppins20 => GoogleFonts.poppins(
-        color: ThemeApp.colors.branco,
+        color: ThemeApp.colors.white,
         fontSize: 20,
         fontWeight: FontWeight.w300,
         letterSpacing: -0.017,
@@ -33,7 +39,7 @@ class TextAppDefault implements TextApp {
   //poppins22
   @override
   TextStyle get poppins22 => GoogleFonts.poppins(
-        color: ThemeApp.colors.branco,
+        color: ThemeApp.colors.white,
         fontSize: 22,
         fontWeight: FontWeight.w300,
         letterSpacing: -0.014,
@@ -41,7 +47,7 @@ class TextAppDefault implements TextApp {
 
   @override
   TextStyle get poppins24 => GoogleFonts.poppins(
-        color: ThemeApp.colors.branco,
+        color: ThemeApp.colors.white,
         fontSize: 24,
         fontWeight: FontWeight.w300,
         letterSpacing: -0.016,
@@ -49,7 +55,7 @@ class TextAppDefault implements TextApp {
 
   @override
   TextStyle get poppins25 => GoogleFonts.poppins(
-        color: ThemeApp.colors.branco,
+        color: ThemeApp.colors.white,
         fontSize: 25,
         fontWeight: FontWeight.w300,
         letterSpacing: -0.019,
@@ -57,7 +63,7 @@ class TextAppDefault implements TextApp {
 
   @override
   TextStyle get poppins30 => GoogleFonts.poppins(
-        color: ThemeApp.colors.branco,
+        color: ThemeApp.colors.white,
         fontSize: 30,
         fontWeight: FontWeight.w300,
         letterSpacing: -0.022,
@@ -65,7 +71,7 @@ class TextAppDefault implements TextApp {
 
   @override
   TextStyle get poppins35 => GoogleFonts.poppins(
-        color: ThemeApp.colors.branco,
+        color: ThemeApp.colors.white,
         fontSize: 35,
         fontWeight: FontWeight.w300,
         letterSpacing: -0.021,
@@ -73,7 +79,7 @@ class TextAppDefault implements TextApp {
 
   @override
   TextStyle get poppins75 => GoogleFonts.poppins(
-        color: ThemeApp.colors.branco,
+        color: ThemeApp.colors.white,
         fontSize: 75,
         fontWeight: FontWeight.w300,
         letterSpacing: -0.022,
@@ -81,7 +87,7 @@ class TextAppDefault implements TextApp {
 
   @override
   TextStyle get poppins95 => GoogleFonts.poppins(
-        color: ThemeApp.colors.branco,
+        color: ThemeApp.colors.white,
         fontSize: 95,
         fontWeight: FontWeight.w300,
         letterSpacing: -0.022,
@@ -89,7 +95,7 @@ class TextAppDefault implements TextApp {
 
   @override
   TextStyle get basic => GoogleFonts.poppins(
-        color: ThemeApp.colors.branco,
+        color: ThemeApp.colors.white,
         fontSize: 16,
         fontWeight: FontWeight.bold,
       );
@@ -167,4 +173,39 @@ class TextAppDefault implements TextApp {
       fontSize: 35,
       fontWeight: FontWeight.w900,
       letterSpacing: 0.7);
+
+  @override
+  TextStyle get menuContact => GoogleFonts.poppins(
+        color: CustomColors.instance.black,
+        fontSize: 35,
+        fontWeight: FontWeight.w900,
+      );
+
+  @override
+  TextStyle get subMenuContact => GoogleFonts.poppins(
+        color: CustomColors.instance.black,
+        fontSize: 22,
+        fontWeight: FontWeight.w400,
+      );
+
+  @override
+  TextStyle get subMenuContactLink => GoogleFonts.poppins(
+        color: CustomColors.instance.blue,
+        fontSize: 22,
+        fontWeight: FontWeight.w400,
+      );
+
+  @override
+  TextStyle get titleCardContact => GoogleFonts.poppins(
+        color: ThemeApp.colors.white,
+        fontSize: 35,
+        fontWeight: FontWeight.w900,
+      );
+
+  @override
+  TextStyle get subtitleCardContact => GoogleFonts.poppins(
+        color: ThemeApp.colors.white,
+        fontSize: 22,
+        fontWeight: FontWeight.w700,
+      );
 }
