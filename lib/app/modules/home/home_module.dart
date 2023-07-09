@@ -1,16 +1,19 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'home_store.dart'; 
+import 'package:flutter_piaui_website/app/modules/events/data/stores/event_store.dart';
+import 'package:flutter_piaui_website/app/modules/events/event_module.dart';
+import 'package:flutter_piaui_website/app/modules/photos/data/stores/photo_store.dart';
+import 'home_store.dart';
 
 import 'home_page.dart';
- 
+
 class HomeModule extends Module {
   @override
   final List<Bind> binds = [
- Bind.lazySingleton((i) => HomeStore()),
- ];
+    Bind.lazySingleton((i) => HomeStore()),
+  ];
 
- @override
- final List<ModularRoute> routes = [
-   ChildRoute(Modular.initialRoute, child: (_, args) => const HomePage()),
- ];
+  @override
+  final List<ModularRoute> routes = [
+    ChildRoute(Modular.initialRoute, child: (_, args) => const HomePage()),
+  ];
 }

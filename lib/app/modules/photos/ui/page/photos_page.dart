@@ -6,7 +6,6 @@ import '../../../../../design_system/components/carousel.dart';
 import '../../../../../design_system/components/custom_card.dart';
 import '../../../../../design_system/texts/texts.dart';
 
-import '../../../../../design_system/texts/texts.dart';
 import '../../data/stores/photo_store.dart';
 
 class PhotosPage extends StatefulWidget {
@@ -19,10 +18,12 @@ class PhotosPage extends StatefulWidget {
 
 class _PhotosPageState extends State<PhotosPage> {
   PhotosStore get store => widget.store;
+  // late PhotosStore photosStore;
 
   @override
   void initState() {
     super.initState();
+    Modular.get<PhotosStore>();
   }
 
   @override

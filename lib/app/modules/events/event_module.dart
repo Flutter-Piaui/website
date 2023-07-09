@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter_modular/flutter_modular.dart';
 import 'data/stores/event_store.dart';
 import 'domain/usecases/fetch_events_usecases.dart';
