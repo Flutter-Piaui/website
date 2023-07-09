@@ -12,8 +12,6 @@ class AppModule extends Module {
   @override
   List<ModularRoute> get routes => [
         ModuleRoute('/', module: HomeModule()),
-        ModuleRoute('/events', module: EventModule()),
-        ModuleRoute('/photos', module: PhotosModule()),
         ModuleRoute('/contacts', module: ContactModule()),
       ];
 }
