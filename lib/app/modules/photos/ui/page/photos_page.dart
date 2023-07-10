@@ -32,7 +32,7 @@ class _PhotosPageState extends State<PhotosPage> {
         padding: const EdgeInsets.all(32.0),
         child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
           Text(
-            'Photosos',
+            'Photos',
             style: TextAppDefault().titleCard,
             textAlign: TextAlign.left,
           ),
@@ -49,7 +49,7 @@ class _PhotosPageState extends State<PhotosPage> {
                       Container(
                         margin: EdgeInsets.only(left: 20),
                         child: CustomCard(
-                          cardType: CardType.event,
+                          cardType: CardType.photo,
                           image: Image.network(
                             i.photoUrl,
                           ),

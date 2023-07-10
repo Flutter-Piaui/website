@@ -24,55 +24,50 @@ class _EventPageState extends State<EventPage> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(32.0),
-        child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-          SizedBox(
-            width: size.width * .9,
-            child: Text(
-              'Eventos',
-              style: TextAppDefault().titleCard,
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Observer(
-              name: 'observerListEvents',
-              builder: (_) {
-                return store.listEvent.length > 0
-                    ? SizedBox(
-                        width: size.width,
-                        height: 450,
-                        child: PageView(
-                          padEnds: false,
-                          controller: PageController(
-                            viewportFraction: 0.2,
-                          ),
-                          children: [
-                            for (var i in store.listEvent)
-                              Container(
-                                margin: EdgeInsets.only(left: 20, bottom: 20),
-                                child: CustomCard(
-                                  cardType: CardType.event,
-                                  image: Image.network(
-                                    i.photoUrl,
-                                  ),
-                                  titleCard: i.title,
-                                  data: i.date,
-                                  onPressed: () async {
-                                    html.window.open(i.linkUrl, i.title);
-                                  },
-                                ),
-                              ),
-                          ],
-                        ),
-                      )
-                    : const Center(
-                        child: CircularProgressIndicator(),
-                      );
-              }),
-        ]),
+    return Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+      SizedBox(
+        width: size.width * .9,
+        child: Text(
+          'Eventos',
+          style: TextAppDefault().titleCard,
+          textAlign: TextAlign.left,
+        ),
       ),
-    );
+      Observer(
+          name: 'observerListEvents',
+          builder: (_) {
+            return store.listEvent.length > 0
+                ? SizedBox(
+                    width: size.width,
+                    height: 450,
+                    child: PageView(
+                      padEnds: false,
+                      controller: PageController(
+                        viewportFraction: 0.35,
+                      ),
+                      children: [
+                        for (var i in store.listEvent)
+                          Container(
+                            margin: EdgeInsets.only(left: 20, bottom: 20),
+                            child: CustomCard(
+                              cardType: CardType.event,
+                              image: Image.network(
+                                i.photoUrl,
+                              ),
+                              titleCard: i.title,
+                              data: i.date,
+                              onPressed: () async {
+                                html.window.open(i.linkUrl, i.title);
+                              },
+                            ),
+                          ),
+                      ],
+                    ),
+                  )
+                : const Center(
+                    child: CircularProgressIndicator(),
+                  );
+          }),
+    ]);
   }
 }
