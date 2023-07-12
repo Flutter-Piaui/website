@@ -5,10 +5,9 @@ import 'package:flutter_piaui_website/app/modules/photos/domain/entities/photo_e
 
 abstract class PhotoDataSource {
   Future<List<PhotoEntity>> getPhotos();
-
 }
 
-class FirebasePhotosDataSource extends PhotoDataSource{
+class FirebasePhotosDataSource extends PhotoDataSource {
   @override
   Future<List<PhotoEntity>> getPhotos() {
     // TODO: implement getPhotos
@@ -23,7 +22,7 @@ class JsonPhotoDataSource extends PhotoDataSource {
     final data = await jsonDecode(response);
     List<PhotoEntity> photos = [];
     for (var item in data) {
-      photos.add(item);
+      photos.add(PhotoEntity.fromMap(item));
     }
     return photos;
   }

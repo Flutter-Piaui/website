@@ -16,38 +16,52 @@ class PhotosPage extends StatefulWidget {
 }
 
 class _PhotosPageState extends State<PhotosPage> {
-  late final PhotosStore photosStore;
+  late final PhotosStore store;
 
   @override
   void initState() {
     super.initState();
-    photosStore = Modular.get<PhotosStore>();
+    store = Modular.get<PhotosStore>();
   }
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: <Widget>[
-        GridView.count(
-          crossAxisCount: 3,
-          physics:
-              NeverScrollableScrollPhysics(), // to disable GridView's scrolling
-          shrinkWrap: true, // You won't see infinite size error
-          children: <Widget>[
-            for (var i in photosStore.listphotos)
-              Container(
-                margin: EdgeInsets.only(left: 20),
-                child: CustomCard(
-                  cardType: CardType.event,
-                  image: Image.network(
-                    i.photoUrl,
-                  ),
-                ),
-              ),
-          ],
-        ),
-        // ...... other list children.
-      ],
+    final size = MediaQuery.of(context).size;
+
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(32.0),
+        child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+          SizedBox(
+            width: size.width * .9,
+            child: Text(
+              'Fotos',
+              style: TextAppDefault().titleCard,
+              textAlign: TextAlign.left,
+            ),
+          ),
+          Observer(
+              name: 'observerListEvents',
+              builder: (_) {
+                return Expanded(
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: store.listphotos.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Container(
+                          margin: EdgeInsets.only(left: 20),
+                          child: CustomCard(
+                            cardType: CardType.photo,
+                            image: Image.network(
+                              store.listphotos[index].photoUrl,
+                            ),
+                          ),
+                        );
+                      }),
+                );
+              }),
+        ]),
+      ),
     );
   }
 }

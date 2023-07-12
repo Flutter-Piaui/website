@@ -13,7 +13,9 @@ abstract class PhotosStoreBase with Store {
   @observable
   List<PhotoEntity> listphotos = [];
 
-  PhotosStoreBase(this.photosUsecase);
+  PhotosStoreBase(this.photosUsecase) {
+    fetchphotoss();
+  }
 
   @action
   fetchphotoss() async {

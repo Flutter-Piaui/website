@@ -10,10 +10,10 @@ import 'ui/page/photos_page.dart';
 class WidgetPhotosModule extends WidgetModule {
   @override
   List<Bind<Object>> get binds => [
-        Bind.factory((i) => JsonPhotoDataSource()),
-        Bind.factory((i) => ApiPhotoRepository(i())),
-        Bind.factory((i) => GetPhotos(i())),
-        Bind.lazySingleton((i) => PhotosStore(i()))
+        Bind((i) => JsonPhotoDataSource(), isLazy: false),
+        Bind((i) => ApiPhotoRepository(i()), isLazy: false),
+        Bind((i) => GetPhotos(i()), isLazy: false),
+        Bind((i) => PhotosStore(i()), isLazy: false),
       ];
 
   @override
