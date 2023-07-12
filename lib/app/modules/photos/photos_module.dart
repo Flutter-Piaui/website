@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_piaui_website/app/modules/photos/data/data_sources/photo_data_source.dart';
 import 'package:flutter_piaui_website/app/modules/photos/data/repositories/api_photo_repository.dart';
@@ -6,7 +7,7 @@ import 'package:flutter_piaui_website/app/modules/photos/domain/usecases/get_pho
 
 import 'ui/page/photos_page.dart';
 
-class PhotosModule extends Module {
+class WidgetPhotosModule extends WidgetModule {
   @override
   List<Bind<Object>> get binds => [
         Bind((i) => JsonPhotoDataSource(), isLazy: false),
@@ -16,12 +17,8 @@ class PhotosModule extends Module {
       ];
 
   @override
-  List<ModularRoute> get routes => [
-        ChildRoute(
-          '/',
-          child: (context, args) => PhotosPage(
-            store: context.read(),
-          ),
-        ),
-      ];
+  List<ModularRoute> get routes => [];
+
+  @override
+  Widget get view => PhotosPage();
 }

@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_piaui_website/app/modules/events/data/stores/event_store.dart';
 import 'package:flutter_piaui_website/app/modules/photos/data/stores/photo_store.dart';
@@ -12,6 +14,8 @@ import 'home_store.dart';
 import 'home_page.dart';
 
 class HomeModule extends Module {
+  List<Module> get imports => [];
+
   @override
   final List<Bind> binds = [
     Bind.lazySingleton((i) => HomeStore()),

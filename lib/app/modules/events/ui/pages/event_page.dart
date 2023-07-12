@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import '../../../../../design_system/components/custom_card.dart';
 import '../../../../../design_system/texts/texts.dart';
 import '../../data/stores/event_store.dart';
 import 'dart:html' as html;
 
 class EventPage extends StatefulWidget {
-  final EventStore store;
-  const EventPage({Key? key, required this.store}) : super(key: key);
+  const EventPage({Key? key}) : super(key: key);
 
   @override
   State<EventPage> createState() => _EventPageState();
 }
 
 class _EventPageState extends State<EventPage> {
-  EventStore get store => widget.store;
+  late final EventStore store;
+
   @override
   void initState() {
     super.initState();
+    store = Modular.get<EventStore>();
   }
 
   @override

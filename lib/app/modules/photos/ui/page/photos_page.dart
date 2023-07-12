@@ -6,23 +6,22 @@ import '../../../../../design_system/components/carousel.dart';
 import '../../../../../design_system/components/custom_card.dart';
 import '../../../../../design_system/texts/texts.dart';
 
-import '../../../../../design_system/texts/texts.dart';
 import '../../data/stores/photo_store.dart';
 
 class PhotosPage extends StatefulWidget {
-  final PhotosStore store;
-  const PhotosPage({Key? key, required this.store}) : super(key: key);
+  const PhotosPage({Key? key}) : super(key: key);
 
   @override
   State<PhotosPage> createState() => _PhotosPageState();
 }
 
 class _PhotosPageState extends State<PhotosPage> {
-  PhotosStore get store => widget.store;
+  late final PhotosStore store;
 
   @override
   void initState() {
     super.initState();
+    store = Modular.get<PhotosStore>();
   }
 
   @override
