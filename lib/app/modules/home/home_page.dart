@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutter_piaui_website/design_system/components/custom_card.dart';
-import 'package:flutter_piaui_website/design_system/theme/website_images.dart';
+import 'package:flutter_piaui_website/design_system/theme/theme.dart';
 import 'home_store.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,30 +22,64 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    // final size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Center(
-          child: Column(children: [
-        SizedBox(
-          width: 200,
-          height: 200,
-          child: PageView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: WebsiteImages().imageList.length,
-            itemBuilder: (ctx, index) {
-              return CustomCard(
-                  cardType: CardType.photo,
-                  image: Image.asset(
-                    WebsiteImages().imageList[index],
-                  ));
-            },
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 40,
+              right: 22,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                //* Texto
+                Text.rich(
+                  TextSpan(
+                    children: [
+                      TextSpan(
+                        text: 'Sua comunidade \nde ',
+                        style: ThemeApp.texts.poppins90,
+                      ),
+                      TextSpan(
+                        text: 'Flutter',
+                        style: ThemeApp.texts.poppins90blue,
+                      ),
+                      TextSpan(
+                        text: ' no Piauí.',
+                        style: ThemeApp.texts.poppins90,
+                      ),
+                    ],
+                  ),
+                ),
+                //* Icones
+                const Row(
+                  children: [
+                    Text(
+                      "Aqui ficarão os icones",
+                      style: TextStyle(
+                        fontSize: 22,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
-        ),
-      ])),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Modular.to.navigate('/events/');
-        },
-        child: const Icon(Icons.add),
+          //* imagem
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 550,
+                width: 400,
+                child: Image.asset('lib/assets/images/hand_holding_smartphone.png'),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

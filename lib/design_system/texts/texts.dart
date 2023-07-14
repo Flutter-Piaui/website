@@ -11,7 +11,8 @@ abstract class TextApp {
   TextStyle get poppins30;
   TextStyle get poppins35;
   TextStyle get poppins75;
-  TextStyle get poppins95;
+  TextStyle get poppins90;
+  TextStyle get poppins90blue;
 
   TextStyle get basic;
   TextStyle get menuFlutter;
@@ -86,11 +87,19 @@ class TextAppDefault implements TextApp {
       );
 
   @override
-  TextStyle get poppins95 => GoogleFonts.poppins(
-        color: ThemeApp.colors.white,
-        fontSize: 95,
-        fontWeight: FontWeight.w300,
-        letterSpacing: -0.022,
+  TextStyle get poppins90 => GoogleFonts.poppins(
+        color: ThemeApp.colors.black,
+        fontSize: 90,
+        fontWeight: FontWeight.w900,
+        letterSpacing: -1.80,
+      );
+
+  @override
+  TextStyle get poppins90blue => GoogleFonts.poppins(
+        color: ThemeApp.colors.blue,
+        fontSize: 90,
+        fontWeight: FontWeight.w900,
+        letterSpacing: -1.80,
       );
 
   @override
@@ -102,29 +111,40 @@ class TextAppDefault implements TextApp {
 
   @override
   TextStyle get menuFlutter => GoogleFonts.poppins(
-      fontSize: 40, fontWeight: FontWeight.bold, color: ThemeApp.colors.blue);
+        fontSize: 40,
+        fontWeight: FontWeight.bold,
+        color: ThemeApp.colors.blue,
+      );
 
   @override
   TextStyle get menuPiaui => GoogleFonts.poppins(
-      color: ThemeApp.colors.black, fontSize: 40, fontWeight: FontWeight.bold);
+        color: ThemeApp.colors.black,
+        fontSize: 40,
+        fontWeight: FontWeight.bold,
+      );
 
   @override
   TextStyle get menuSubtitle => GoogleFonts.poppins(
-      color: ThemeApp.colors.black, fontSize: 25, fontWeight: FontWeight.w600);
+        color: ThemeApp.colors.black,
+        fontSize: 25,
+        fontWeight: FontWeight.w600,
+      );
 
   @override
   TextStyle get dataCard => GoogleFonts.poppins(
-      color: CustomColors.instance.black25,
-      fontSize: 25,
-      fontWeight: FontWeight.w500,
-      letterSpacing: 0.5);
+        color: CustomColors.instance.black25,
+        fontSize: 25,
+        fontWeight: FontWeight.w500,
+        letterSpacing: 0.5,
+      );
 
   @override
   TextStyle get dataSCard => GoogleFonts.poppins(
-      color: CustomColors.instance.black25,
-      fontSize: 15,
-      fontWeight: FontWeight.w500,
-      letterSpacing: 0.5);
+        color: CustomColors.instance.black25,
+        fontSize: 15,
+        fontWeight: FontWeight.w500,
+        letterSpacing: 0.5,
+      );
 
   @override
   TextStyle get textRegular => GoogleFonts.poppins(
@@ -162,17 +182,19 @@ class TextAppDefault implements TextApp {
         height: 1.2,
       );
   TextStyle get learnMore => GoogleFonts.poppins(
-      color: CustomColors.instance.blue,
-      fontSize: 25,
-      fontWeight: FontWeight.w700,
-      letterSpacing: 0.5);
+        color: CustomColors.instance.blue,
+        fontSize: 25,
+        fontWeight: FontWeight.w700,
+        letterSpacing: 0.5,
+      );
 
   @override
   TextStyle get titleCard => GoogleFonts.poppins(
-      color: CustomColors.instance.black,
-      fontSize: 35,
-      fontWeight: FontWeight.w900,
-      letterSpacing: 0.7);
+        color: CustomColors.instance.black,
+        fontSize: 35,
+        fontWeight: FontWeight.w900,
+        letterSpacing: 0.7,
+      );
 
   @override
   TextStyle get menuContact => GoogleFonts.poppins(
