@@ -244,7 +244,7 @@ class ContactPage extends StatelessWidget {
             ],
           ),
           Text(
-            "Copyright c Flutter Piauí 2023 - Todos os direitos reservados",
+            "Copyright \u00a9 Flutter Piauí 2023 - Todos os direitos reservados",
             style: ThemeApp.texts.subMenuContact,
           ),
           Row(
