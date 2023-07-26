@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -44,20 +46,27 @@ class _PhotosPageState extends State<PhotosPage> {
               name: 'observerListEvents',
               builder: (_) {
                 return Expanded(
-                  child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: store.listphotos.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Container(
-                          margin: EdgeInsets.only(left: 20),
-                          child: CustomCard(
-                            cardType: CardType.photo,
-                            image: Image.network(
-                              store.listphotos[index].photoUrl,
+                  child: ScrollConfiguration(
+                    behavior: ScrollConfiguration.of(context).copyWith(
+                        dragDevices: {
+                          PointerDeviceKind.mouse,
+                          PointerDeviceKind.touch
+                        }),
+                    child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: store.listphotos.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Container(
+                            margin: const EdgeInsets.only(left: 20),
+                            child: CustomCard(
+                              cardType: CardType.photo,
+                              image: Image.network(
+                                store.listphotos[index].photoUrl,
+                              ),
                             ),
-                          ),
-                        );
-                      }),
+                          );
+                        }),
+                  ),
                 );
               }),
         ]),

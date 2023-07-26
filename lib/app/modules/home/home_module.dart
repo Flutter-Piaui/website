@@ -1,4 +1,4 @@
-import 'dart:js';
+
 
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_piaui_website/app/modules/events/data/stores/event_store.dart';

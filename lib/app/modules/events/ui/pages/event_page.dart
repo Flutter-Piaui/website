@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -42,26 +44,34 @@ class _EventPageState extends State<EventPage> {
               child: Observer(
                   name: 'observerListEvents',
                   builder: (_) {
-                    return ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: store.listEvent.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Container(
-                            margin: EdgeInsets.only(left: 20, bottom: 20),
-                            child: CustomCard(
-                              cardType: CardType.event,
-                              image: Image.network(
-                                store.listEvent[index].photoUrl,
+                    return ScrollConfiguration(
+                      behavior: ScrollConfiguration.of(context).copyWith(
+                          dragDevices: {
+                            PointerDeviceKind.mouse,
+                            PointerDeviceKind.touch
+                          }),
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: store.listEvent.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Container(
+                              margin: EdgeInsets.only(left: 20, bottom: 20),
+                              child: CustomCard(
+                                cardType: CardType.event,
+                                image: Image.network(
+                                  store.listEvent[index].photoUrl,
+                                ),
+                                titleCard: store.listEvent[index].title,
+                                data: store.listEvent[index].date,
+                                onPressed: () async {
+                                  html.window.open(
+                                      store.listEvent[index].linkUrl,
+                                      store.listEvent[index].title);
+                                },
                               ),
-                              titleCard: store.listEvent[index].title,
-                              data: store.listEvent[index].date,
-                              onPressed: () async {
-                                html.window.open(store.listEvent[index].linkUrl,
-                                    store.listEvent[index].title);
-                              },
-                            ),
-                          );
-                        });
+                            );
+                          }),
+                    );
                   })),
         ]),
       ),
