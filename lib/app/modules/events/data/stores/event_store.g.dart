@@ -25,22 +25,6 @@ mixin _$EventStore on EventStoreBase, Store {
     });
   }
 
-  late final _$counterAtom =
-      Atom(name: 'EventStoreBase.counter', context: context);
-
-  @override
-  int get counter {
-    _$counterAtom.reportRead();
-    return super.counter;
-  }
-
-  @override
-  set counter(int value) {
-    _$counterAtom.reportWrite(value, super.counter, () {
-      super.counter = value;
-    });
-  }
-
   late final _$fetchEventsAsyncAction =
       AsyncAction('EventStoreBase.fetchEvents', context: context);
 
@@ -52,8 +36,7 @@ mixin _$EventStore on EventStoreBase, Store {
   @override
   String toString() {
     return '''
-listEvent: ${listEvent},
-counter: ${counter}
+listEvent: ${listEvent}
     ''';
   }
 }

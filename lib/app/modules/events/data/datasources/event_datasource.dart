@@ -25,7 +25,6 @@ class JsonEventDatasource implements EventDatasource {
     for (var item in data) {
       listEvent.add(EventEntity.fromMap(item));
     }
-
     return listEvent;
     // return list;
   }

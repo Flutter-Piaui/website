@@ -26,8 +26,8 @@ class CustomCard extends StatelessWidget {
       if (cardType == CardType.event) {
         return Center(
           child: Container(
-            width: 310,
-            height: 316,
+            width: 350,
+            height: 356,
             padding: const EdgeInsets.fromLTRB(20, 20, 20, 10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25),
@@ -46,8 +46,8 @@ class CustomCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    width: 249,
-                    height: 112,
+                    width: 350,
+                    height: 142,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: context.color.black25),
@@ -75,8 +75,8 @@ class CustomCard extends StatelessWidget {
       } else {
         return Center(
           child: Container(
-            width: 470,
-            height: 536,
+            width: 410,
+            height: 416,
             padding: const EdgeInsets.fromLTRB(33, 37, 33, 52),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(40), color: Colors.white),
