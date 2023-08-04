@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_piaui_website/design_system/theme/theme.dart';
+import 'package:url_launcher/link.dart';
 
 class ContactPage extends StatelessWidget {
   const ContactPage({super.key});
@@ -154,63 +155,86 @@ class ContactPage extends StatelessWidget {
                     const SizedBox(height: 50),
                     SizedBox(
                       height: 50,
-                      child: GestureDetector(
-                        child: Text(
-                          "Facebook",
-                          style: ThemeApp.texts.subMenuContact,
-                        ),
-                        onTap: () {},
-                      ),
+                      child: Link(
+                          uri: Uri.parse(
+                              "https://chat.whatsapp.com/DuqIGiftjhC4bKZUl9OTJE"),
+                          target: LinkTarget.blank,
+                          builder: (BuildContext buildContext,
+                              FollowLink? openLink) {
+                            return TextButton(
+                              onPressed: openLink,
+                              child: Text(
+                                "WhatsApp",
+                                style: ThemeApp.texts.subMenuContact,
+                              ),
+                            );
+                          }),
                     ),
                     SizedBox(
                       height: 50,
-                      child: GestureDetector(
-                        child: Text(
-                          "Instagram",
-                          style: ThemeApp.texts.subMenuContact,
-                        ),
-                        onTap: () {},
-                      ),
+                      child: Link(
+                          uri: Uri.parse(
+                              "https://www.instagram.com/flutter_piaui/"),
+                          target: LinkTarget.blank,
+                          builder: (BuildContext buildContext,
+                              FollowLink? openLink) {
+                            return TextButton(
+                              onPressed: openLink,
+                              child: Text(
+                                "Instagram",
+                                style: ThemeApp.texts.subMenuContact,
+                              ),
+                            );
+                          }),
                     ),
                     SizedBox(
                       height: 50,
-                      child: GestureDetector(
-                        child: Text(
-                          "Twitter",
-                          style: ThemeApp.texts.subMenuContact,
-                        ),
-                        onTap: () {},
-                      ),
+                      child: Link(
+                          uri: Uri.parse("https://twitter.com/FlutterPiaui"),
+                          target: LinkTarget.blank,
+                          builder: (BuildContext buildContext,
+                              FollowLink? openLink) {
+                            return TextButton(
+                              onPressed: openLink,
+                              child: Text(
+                                "Twitter",
+                                style: ThemeApp.texts.subMenuContact,
+                              ),
+                            );
+                          }),
                     ),
                     SizedBox(
                       height: 50,
-                      child: GestureDetector(
-                        child: Text(
-                          "LinkedIn",
-                          style: ThemeApp.texts.subMenuContact,
-                        ),
-                        onTap: () {},
-                      ),
+                      child: Link(
+                          uri: Uri.parse(
+                              "https://www.youtube.com/@flutterpiaui5662"),
+                          target: LinkTarget.blank,
+                          builder: (BuildContext buildContext,
+                              FollowLink? openLink) {
+                            return TextButton(
+                              onPressed: openLink,
+                              child: Text(
+                                "Youtube",
+                                style: ThemeApp.texts.subMenuContact,
+                              ),
+                            );
+                          }),
                     ),
                     SizedBox(
                       height: 50,
-                      child: GestureDetector(
-                        child: Text(
-                          "YouTube",
-                          style: ThemeApp.texts.subMenuContact,
-                        ),
-                        onTap: () {},
-                      ),
-                    ),
-                    SizedBox(
-                      height: 50,
-                      child: GestureDetector(
-                        child: Text(
-                          "Discord",
-                          style: ThemeApp.texts.subMenuContact,
-                        ),
-                        onTap: () {},
-                      ),
+                      child: Link(
+                          uri: Uri.parse("https://discord.gg/9WBcqzrn"),
+                          target: LinkTarget.blank,
+                          builder: (BuildContext buildContext,
+                              FollowLink? openLink) {
+                            return TextButton(
+                              onPressed: openLink,
+                              child: Text(
+                                "Discord",
+                                style: ThemeApp.texts.subMenuContact,
+                              ),
+                            );
+                          }),
                     ),
                   ],
                 ),

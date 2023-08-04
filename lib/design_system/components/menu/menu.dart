@@ -23,21 +23,40 @@ class Menu extends StatelessWidget {
         final bool isMobile = constraints.maxWidth < 900;
 
         if (isMobile) {
-          return menuMobile(
-            buttonInitial,
-            buttonAbout,
-            buttonPhotos,
-            buttonEvents,
-            buttonContacts,
+          return PopupMenuButton<String>(
+            icon: const Icon(
+              Icons.menu,
+              color: Colors.blue,
+            ),
+            onSelected: (value) {
+              // Aqui você pode adicionar a ação para cada item do menu
+              print('Selecionado: $value');
+            },
+            itemBuilder: (BuildContext context) {
+              // Defina as opções do menu
+              return [
+                PopupMenuItem<String>(
+                  value: 'opcao1',
+                  child: Text('Início'),
+                ),
+                PopupMenuItem<String>(
+                  value: 'Sobre',
+                  child: Text('Fotos'),
+                ),
+                PopupMenuItem<String>(
+                  value: 'opcao3',
+                  child: Text('Eventos'),
+                ),
+                PopupMenuItem<String>(
+                  value: 'opcao3',
+                  child: Text('Contatos'),
+                ),
+              ];
+            },
           );
         } else {
-          return menuWeb(
-            buttonInitial,
-            buttonAbout,
-            buttonPhotos,
-            buttonEvents,
-            buttonContacts,
-          );
+          return menuWeb(buttonInitial, buttonAbout, buttonPhotos, buttonEvents,
+              buttonContacts, isMobile);
         }
       },
     );
@@ -50,6 +69,7 @@ Widget menuWeb(
   void Function() buttonPhotos,
   void Function() buttonEvents,
   void Function() buttonContacts,
+  bool isMobile,
 ) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -35,42 +35,62 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: PageView(
-        scrollDirection: Axis.vertical,
-        children: [
-          Container(
-            child: Column(
-              children: [
-                Menu(
-                    buttonInitial: () {},
-                    buttonAbout: () {},
-                    buttonPhotos: () {},
-                    buttonEvents: () {},
-                    buttonContacts: () {}),
-                const SizedBox(height: 200),
-                const Text(
-                  'FALTA TELA HOME',
-                  style: TextStyle(
-                      fontSize: 50,
-                      color: Colors.red,
-                      fontWeight: FontWeight.bold),
+    return LayoutBuilder(builder: (context, constraints) {
+      final bool isMobile = constraints.maxWidth < 900;
+
+      return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          leading: isMobile
+              ? Menu(
+                  buttonAbout: () {},
+                  buttonContacts: () {},
+                  buttonEvents: () {},
+                  buttonInitial: () {},
+                  buttonPhotos: () {},
                 )
-              ],
+              : SizedBox.shrink(),
+          title: !isMobile
+              ? Menu(
+                  buttonAbout: () {},
+                  buttonContacts: () {},
+                  buttonEvents: () {},
+                  buttonInitial: () {},
+                  buttonPhotos: () {},
+                )
+              : SizedBox.shrink(),
+        ),
+        body: PageView(
+          scrollDirection: Axis.vertical,
+          children: [
+            Container(
+              child: Column(
+                children: [
+                  const SizedBox(height: 200),
+                  const Text(
+                    'FALTA TELA HOME',
+                    style: TextStyle(
+                        fontSize: 50,
+                        color: Colors.red,
+                        fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
             ),
-          ),
-          Container(
-            color: context.color.black25,
-            child: const About(),
-          ),
-          const PhotosPage(),
-          Container(
-            color: context.color.black25,
-            child: const EventPage(),
-          ),
-          const ContactPage(),
-        ],
-      ),
-    );
+            Container(
+              color: context.color.black25,
+              child: const About(),
+            ),
+            const PhotosPage(),
+            Container(
+              color: context.color.black25,
+              child: const EventPage(),
+            ),
+            const ContactPage(),
+          ],
+        ),
+      );
+    });
   }
 }
